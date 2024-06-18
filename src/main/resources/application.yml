@@ -1,0 +1,55 @@
+spring:
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  batch:
+    jdbc:
+      initialize-schema: EMBEDDED # ALWAYS: 스프링 배치 db 스키마 항상 생성, EMBEDDED(default): 내장 DB 전용, NEVER: 스키마 초기화 안함.(운영)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=MYSQL
+    username: root
+    password: password
+
+kafka:
+  bootstrap-servers: PLAINTEXT://127.0.0.1:29092
+  consumer:
+    group-id: test-group
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    auto-commit-interval: 1000
+
+---
+# docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql:latest
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  batch:
+    job:
+      enabled: false # 기본 값은 true, 스프링 배치가 실행될 때 자동으로 생성된 모든 job을 실행시킬지 여부에 대한 조건.
+      name: ${job.name:helloJob}
+    jdbc:
+      initialize-schema: always
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: password
+
+kafka:
+  bootstrap-servers: PLAINTEXT://127.0.0.1:29092
+  consumer:
+    group-id: test-group
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    auto-commit-interval: 1000 # 오프셋 자동 커밋 주기 (밀리초)
