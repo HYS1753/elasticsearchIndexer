@@ -10,6 +10,7 @@ package elasticsearch.indexer.batch.job.step;
  *
  ****************************************************************************************/
 
+import elasticsearch.indexer.batch.config.CustomKafkaChunkListener;
 import elasticsearch.indexer.batch.config.CustomKafkaItemReader;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Step;
@@ -18,6 +19,7 @@ import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.kafka.KafkaItemReader;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,9 +44,11 @@ public class BookIndexStep {
 
     @Bean(name = "bookIndexChunkStep")
     public Step bookIndexChunkStep(JobRepository jobRepository, PlatformTransactionManager tx) {
+        KafkaItemReader<String, String> itemReader = kafkaItemReader.ItemReader();
         return new StepBuilder("bookIndexChunkStep", jobRepository)
                 .<String, String>chunk(2, tx)  // <> 안에 Input Output Type 을 적어줌. 위 청크 사이즈 만큼 트랜젝션을 묶어 처리
-                .reader(kafkaItemReader.ItemReader())
+//                .listener(new CustomKafkaChunkListener(itemReader))
+                .reader(itemReader)
                 .processor(new ItemProcessor<String, String>() {
                     @Override
                     public String process(String item) throws Exception {

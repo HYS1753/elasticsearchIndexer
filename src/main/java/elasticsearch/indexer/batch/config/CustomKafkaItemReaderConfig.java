@@ -38,7 +38,6 @@ public class CustomKafkaItemReaderConfig {
     /* Kafka ItemReader Setting - 해당 Bean을 주입 시켜 사용 */
     @Bean
     public CustomKafkaItemReader bookIndexItemReader() {
-        System.out.println(bootstrapServers + autoOffsetReset + enableAutoCommit + autoCommitInterval);
         return new CustomKafkaItemReader("bookIndexItemReader", "test", "test_group", bootstrapServers, autoOffsetReset, enableAutoCommit, autoCommitInterval);
     }
 }

@@ -51,5 +51,5 @@ kafka:
   consumer:
     group-id: test-group
     auto-offset-reset: earliest
-    enable-auto-commit: true
+    enable-auto-commit: false
     auto-commit-interval: 1000 # 오프셋 자동 커밋 주기 (밀리초)
