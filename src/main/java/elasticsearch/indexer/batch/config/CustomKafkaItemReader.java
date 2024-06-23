@@ -1,14 +1,4 @@
 package elasticsearch.indexer.batch.config;
-/****************************************************************************************
- * Copyright(c) 2021-2023 Kyobo Book Centre All right reserved.
- * This software is the proprietary information of Kyobo Book.
- *
- * Revision History
- * Author                         Date          Description
- * --------------------------     ----------    ----------------------------------------
- * hys1753@kyobobook.co.kr        2024-06-17
- *
- ****************************************************************************************/
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -20,13 +10,6 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Properties;
 
-/**
- * @author : hys1753@kyobobook.co.kr
- * @Project : elasticsearchIndexer
- * @FileName : CustomKafkaItemReader
- * @Date : 2024-06-17
- * @description :
- */
 public class CustomKafkaItemReader {
     private String bootstrapServers;
     private String autoOffsetReset;

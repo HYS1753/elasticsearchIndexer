@@ -1,14 +1,4 @@
 package elasticsearch.indexer.batch.job.step;
-/****************************************************************************************
- * Copyright(c) 2021-2023 Kyobo Book Centre All right reserved.
- * This software is the proprietary information of Kyobo Book.
- *
- * Revision History
- * Author                         Date          Description
- * --------------------------     ----------    ----------------------------------------
- * hys1753@kyobobook.co.kr        2024-06-11
- *
- ****************************************************************************************/
 
 import elasticsearch.indexer.batch.config.CustomKafkaChunkListener;
 import elasticsearch.indexer.batch.config.CustomKafkaItemReader;
@@ -25,13 +15,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
-/**
- * @author : hys1753@kyobobook.co.kr
- * @Project : elasticsearchIndexer
- * @FileName : BookIndexStep
- * @Date : 2024-06-11
- * @description :
- */
 @Configuration
 @Slf4j
 public class BookIndexStep {

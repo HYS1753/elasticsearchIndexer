@@ -1,14 +1,4 @@
 package elasticsearch.indexer.batch.config;
-/****************************************************************************************
- * Copyright(c) 2021-2023 Kyobo Book Centre All right reserved.
- * This software is the proprietary information of Kyobo Book.
- *
- * Revision History
- * Author                         Date          Description
- * --------------------------     ----------    ----------------------------------------
- * hys1753@kyobobook.co.kr        2024-06-13
- *
- ****************************************************************************************/
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.launch.JobLauncher;
@@ -18,13 +8,6 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.core.task.SyncTaskExecutor;
 import org.springframework.stereotype.Component;
 
-/**
- * @author : hys1753@kyobobook.co.kr
- * @Project : elasticsearchIndexer
- * @FileName : CustomJobLauncher
- * @Date : 2024-06-13
- * @description :
- */
 @Component
 @RequiredArgsConstructor
 public class CustomJobLauncher {

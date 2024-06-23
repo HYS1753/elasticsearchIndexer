@@ -1,14 +1,4 @@
 package elasticsearch.indexer.batch.job;
-/****************************************************************************************
- * Copyright(c) 2021-2023 Kyobo Book Centre All right reserved.
- * This software is the proprietary information of Kyobo Book.
- *
- * Revision History
- * Author                         Date          Description
- * --------------------------     ----------    ----------------------------------------
- * hys1753@kyobobook.co.kr        2024-06-11
- *
- ****************************************************************************************/
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
@@ -22,13 +12,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Arrays;
 
-/**
- * @author : hys1753@kyobobook.co.kr
- * @Project : elasticsearchIndexer
- * @FileName : BookIndexJob
- * @Date : 2024-06-11
- * @description :
- */
 @Configuration
 @RequiredArgsConstructor
 public class BookIndexJob {

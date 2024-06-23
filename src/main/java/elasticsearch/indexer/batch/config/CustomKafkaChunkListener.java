@@ -1,14 +1,4 @@
 package elasticsearch.indexer.batch.config;
-/****************************************************************************************
- * Copyright(c) 2021-2023 Kyobo Book Centre All right reserved.
- * This software is the proprietary information of Kyobo Book.
- *
- * Revision History
- * Author                         Date          Description
- * --------------------------     ----------    ----------------------------------------
- * hys1753@kyobobook.co.kr        2024-06-18
- *
- ****************************************************************************************/
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.Consumer;
@@ -17,14 +7,6 @@ import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.kafka.KafkaItemReader;
 import org.springframework.kafka.core.ConsumerFactory;
-
-/**
- * @author : hys1753@kyobobook.co.kr
- * @Project : elasticsearchIndexer
- * @FileName : CustomKafkaChunkListener
- * @Date : 2024-06-18
- * @description :
- */
 @Slf4j
 public class CustomKafkaChunkListener implements ChunkListener {
     private final KafkaItemReader<String, String> itemReader;

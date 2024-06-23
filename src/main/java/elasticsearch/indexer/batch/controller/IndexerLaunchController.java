@@ -1,14 +1,4 @@
-package elasticsearch.indexer.controller;
-/****************************************************************************************
- * Copyright(c) 2021-2023 Kyobo Book Centre All right reserved.
- * This software is the proprietary information of Kyobo Book.
- *
- * Revision History
- * Author                         Date          Description
- * --------------------------     ----------    ----------------------------------------
- * hys1753@kyobobook.co.kr        2024-06-17
- *
- ****************************************************************************************/
+package elasticsearch.indexer.batch.controller;
 
 import elasticsearch.indexer.batch.config.CustomJobLauncher;
 import lombok.extern.slf4j.Slf4j;
@@ -24,13 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author : hys1753@kyobobook.co.kr
- * @Project : elasticsearchIndexer
- * @FileName : IndexerLaunchController
- * @Date : 2024-06-17
- * @description :
- */
+
 @Slf4j
 @RestController
 @RequestMapping(value = "/jobs")
