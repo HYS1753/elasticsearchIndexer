@@ -32,7 +32,9 @@ dependencies {
 
 	// DB
 	runtimeOnly 'com.h2database:h2:2.2.224'
-	implementation 'mysql:mysql-connector-java:8.0.33'
+	// implementation 'mysql:mysql-connector-java:8.0.33'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.4'
+	implementation 'org.postgresql:postgresql:42.7.3'
 
 	// test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -43,6 +45,10 @@ dependencies {
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// etc
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+
 }
 
 tasks.named('test') {
